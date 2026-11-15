@@ -1,0 +1,20 @@
+{ lib, ... }:
+
+{
+  config.homeManager.nixosModules = lib.mkAfter [
+    ({ config, ... }:
+
+    let
+      repoDir = "${config.home.homeDirectory}/nix";
+      opencodeSrc = "${repoDir}/dotfiles/opencode";
+      agentsSrc = "${repoDir}/dotfiles/agents";
+    in
+    {
+      home.file = {
+        ".config/opencode/opencode.json".source = config.lib.file.mkOutOfStoreSymlink "${opencodeSrc}/opencode.json";
+        ".config/opencode/AGENTS.md".source = config.lib.file.mkOutOfStoreSymlink "${agentsSrc}/AGENTS.md";
+        ".config/opencode/guard.ts".source = config.lib.file.mkOutOfStoreSymlink "${opencodeSrc}/guard.ts";
+      };
+    })
+  ];
+}

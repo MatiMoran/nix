@@ -1,0 +1,65 @@
+{
+    "effortLevel": "high",
+    "enabledPlugins": {
+        "frontend-design@claude-plugins-official": true,
+        "skill-creator@claude-plugins-official": true,
+    },
+    "language": "espanol",
+    "permissions": {
+        "allow": [
+            "Bash(gh api *)",
+            "Bash(gh pr create*)",
+            "Bash(git add*)",
+            "Bash(git commit*)",
+            "Bash(git push*)",
+            "Bash(open *)",
+            "Bash(pbcopy)",
+            "Bash(pip install *)",
+            "Bash(poetry env info*)",
+            "Bash(poetry init*)",
+            "Bash(poetry lock*)",
+            "Bash(poetry version*)",
+            "Bash(python3 *)",
+            "Bash(git fetch *)"
+        ],
+        "deny": [
+            "Bash(chmod -R *)",
+            "Bash(chown *)",
+            "Bash(curl * | bash *)",
+            "Bash(curl * | sh *)",
+            "Bash(dd *)",
+            "Bash(diskutil *)",
+            "Bash(fdisk *)",
+            "Bash(git checkout -- . *)",
+            "Bash(git clean -f *)",
+            "Bash(git push --force *)",
+            "Bash(git reset --hard *)",
+            "Bash(kill -9 *)",
+            "Bash(killall *)",
+            "Bash(mkfs *)",
+            "Bash(reboot *)",
+            "Bash(shutdown *)",
+            "Bash(wget * | bash *)",
+            "Bash(wget * | sh *)"
+        ],
+        "ask": [
+            "Bash(mv *)",
+            "Bash(rm -f *)",
+            "Bash(rm -rf *)"
+        ],
+        "defaultMode": "plan"
+    },
+    "remoteControlAtStartup": false,
+    "skipAutoPermissionPrompt": true,
+    "statusLine": {
+        "type": "command",
+        "command": "bash ~/.claude/statusline-command.sh"
+    },
+    "theme": "dark",
+    "useAutoModeDuringPlan": true,
+    "voice": {
+        "enabled": true,
+        "mode": "hold"
+    },
+    "voiceEnabled": true
+}
